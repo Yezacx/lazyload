@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插件之懒加载</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        div {
+            height: 3000px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<!--<img src="images/02.jpg" alt="">-->
+<img class="lazy" data-original="images/02.jpg" width="640" height="480">
+<script src="./js/jquery-1.8.2.min.js"></script>
+<script src="./js/jquery.lazyload.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //懒加载调用
+        //使用插件注意：1.引包（必须在jquery之下） 2.通过调用方法实现功能，而参数的不同，功能也可能不同
+        $("img.lazy").lazyload();
+    });
+</script>
+</body>
+</html>
